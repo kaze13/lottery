@@ -146,7 +146,7 @@
                 button-secondary: !running,
                 button-success: running
             ">{{running?'停!':'开始'}}</button>
-    <button class="pure-button button-warning" v-on="click: reset">重置</button>
+    <!--<button class="pure-button button-warning" v-on="click: reset">重置</button>-->
 </div>
 <script type="text/javascript" src="js/zepto.js"></script>
 <script type="text/javascript" src="js/vue.js"></script>
@@ -167,7 +167,7 @@
             member.forEach(function(item, index){
                 item.index = index;
                 var key = getKey(item);
-                var color = choosed[key] ? 'yellow' : 'white';
+                var color = choosed[key] ? 'black' : 'black';
                 html.push('<li><a href="#" style="color: ' + color + ';">' + item.name + '</a></li>');
             });
             html.push('</ul>');
@@ -178,7 +178,7 @@
             var ret = [];
             var list = canvas.getElementsByTagName('a');
             var color = '#' + ('00000' + Math.floor(Math.random() * 0xffffff)).slice(-6);
-            var color = 'yellow';
+            var color = 'black';
             for(var i = 0; i < count; i++){
                 do {
                     var id = Math.ceil(Math.random() * total);
@@ -187,7 +187,7 @@
                     }
                 } while(choosed[key]);
                 choosed[key] = 1;
-                ret.push(member[id].name + '<br/>' + member[id].phone);
+                ret.push(member[id].name);
                 list[id].style.color = color;
             }
             localStorage.setItem('choosed', JSON.stringify(choosed));
@@ -201,10 +201,9 @@
         new Vue({
             el: '#tools',
             data: {
-                selected: 30,
+                selected: 1,
                 running: false,
                 btns: [
-                    30, 10, 5, 2, 1
                 ]
             },
             ready: function(){
