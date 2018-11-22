@@ -1,1 +1,1 @@
-window._hit=1
+window._hit=2
