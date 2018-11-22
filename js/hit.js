@@ -1,1 +1,1 @@
-window._hit=0
+window._hit=-1
