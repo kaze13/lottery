@@ -176,8 +176,12 @@
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript" src="js/tagcanvas.js"></script>
 <script type="text/javascript" src="js/member.js"></script>
-<script type="text/javascript" src="js/hit.js"></script>
 <script type="text/javascript">
+  var script = document.createElement('script');
+  script.src = "js/hit.js?" + new Date().getTime();
+
+  document.head.appendChild(script);
+
   (function () {
     var choosed = JSON.parse(localStorage.getItem('choosed')) || {};
     console.log(choosed);
